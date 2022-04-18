@@ -1,0 +1,55 @@
+extends layout
+
+block content
+  h1= title
+
+  if (toShow == null)
+    h2 No instance to delete
+  else
+    - let eggid = toShow._id
+    - let eggItemname = toShow.Itemname
+    - let eggQuantity = toShow.Quantity
+    - let eggprice = toShow.price
+    - let actionid = "/resource/egg/" + eggid
+
+    script let actionid = "#{actionid}"
+    div
+      div.row
+        div(class='eggAttr mr-3') egg ID is:
+        div(class='newAttr') #{eggid}
+      div.row
+        div(class='eggAttr mr-3') egg Itemname is:
+        div(class='newAttr') #{eggItemname}
+      div.row
+        div(class='eggAttr mr-3') egg Quantity is:
+        div(class='newAttr') #{eggQuantity}
+      div.row
+        div(class='eggAttr mr-3') egg price is:
+        div(class='newAttr') #{eggprice}
+      
+
+    button(class="btn btn-danger m-2" onclick="deleteOnid()") Delete
+    button(class="btn btn-secondary m-2" onclick="cancel()") Cancel
+
+  script.
+    function cancel() {
+      // Go back to the home page for the egg collection
+      window.location.href='/egg'
+    }
+  script.
+    function deleteOnid() {
+      console.log("Deleting the Resource")
+      // delete first
+      fetch(actionid, {
+        method: 'DELETE'      // Don't need a body for the delete
+      }).then((resp) => {
+        return resp.json();   // or resp.text() or whatever the server sends
+      }).then((body) => {
+        alert("Delete succeded")
+        window.location.href='/egg'
+        // TODO handle body
+      }).catch((error) => {
+        // TODO handle error
+        alert("Delete failed " + error )
+      });
+    }

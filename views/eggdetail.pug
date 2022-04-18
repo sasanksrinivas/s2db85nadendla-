@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1(id="titlestyle")= title
+
+  if (toShow == null)
+    h2 No instance to delete
+  else
+    - let eggid = toShow._id
+    - let eggItemname = toShow.Itemname
+    - let eggQuantity = toShow.Quantity
+    - let eggprice = toShow.price
+
+    div
+      div.row
+        div(class='eggAttr mr-3') egg ID is:
+        div(class='variety stylesheetnew') #{eggid}
+      div.row
+        div(class='eggAttr mr-3') egg Itemname is:
+        div(class="variety") #{eggItemname}
+      div.row
+        div(class='eggAttr mr-3') egg Quantity is:
+        div(class="variety") #{eggQuantity}
+      div.row
+        div(class='eggAttr mr-3') egg price is:
+        div(class="variety") #{eggprice}
+    

@@ -1,0 +1,34 @@
+extends layout
+block content
+  h1= title
+  p Mobile Search Results
+  div(class="container-fluid")
+        div(class="row")
+            -
+                let egg = [
+                    {
+                        "Itemname": "egg Garlic Bread",
+                        "Quantity": 20,
+                        "price": "Eight USD"
+                    },
+                    {
+                        "Itemname": "French Toast",
+                        "Quantity": 40,
+                        "price": "Ten USD"
+                    },
+                    {
+                        "Itemname": "egg Grilled Cheese Sandwich",
+                        "Quantity": 1,
+                        "price": "Ten USD"
+                    },                   
+                ]
+            each v,index in egg
+                div(class="col-sm-2" onclick=`buy(${index})`) #{v.Itemname}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{v.Quantity}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{v.price}
+  script.                
+        function buy(intemNo)
+        {
+              alert(`you purchased Item ${intemNo+1}`)
+        }
+
