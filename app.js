@@ -14,7 +14,7 @@ var egg = require("./models/egg");
 var resourceRouter = require('./routes/resource');
 
 
-const connectionString =  
+const connectionString ="mongodb+srv://demo:demo@cluster0.bejkq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority" 
 process.env.MONGO_CON 
 mongoose = require('mongoose'); 
 mongoose.connect(connectionString,  
