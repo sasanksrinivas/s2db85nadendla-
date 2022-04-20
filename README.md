@@ -1,6 +1,6 @@
-# s2db61peddireddy
+# s2db85nadendla
 
-I am a Thunder boy.
+I am a Good boy.
 
 Heroku link : https://s2db85nadendla.herokuapp.com/
 
