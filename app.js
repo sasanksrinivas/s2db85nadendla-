@@ -52,7 +52,7 @@ async function recreateDB(){
   // Delete everything 
   await egg.deleteMany(); 
  
-  let instance1 = new egg({Itemname:"egg Garlic Bread",  Quantity:20, 
+  let instance1 = new egg({Itemname:"egg" ,Quantity:20, 
   price:25.4}); 
   instance1.save( function(err,doc) { 
       if(err) return console.error(err); 
