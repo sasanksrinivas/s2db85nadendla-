@@ -1,9 +1,11 @@
 var express = require('express');
+const egg_controllers= require('../controllers/egg');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('egg', { title: 'Search Results egg' });
-});
+
+/* GET detail costume page */ 
+router.get('/detail', egg_controlers.egg_view_one_Page); 
 
 module.exports = router;
+
+
