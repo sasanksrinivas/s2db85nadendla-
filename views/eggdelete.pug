@@ -7,25 +7,25 @@ block content
     h2 No instance to delete
   else
     - let eggid = toShow._id
-    - let eggItemname = toShow.Itemname
-    - let eggQuantity = toShow.Quantity
-    - let eggprice = toShow.price
+    - let egg_Itemname = toShow.egg_Itemname
+    - let egg_Quantity = toShow.egg_Quantity
+    - let egg_price = toShow.egg_price
     - let actionid = "/resource/egg/" + eggid
 
     script let actionid = "#{actionid}"
     div
       div.row
         div(class='eggAttr mr-3') egg ID is:
-        div(class='newAttr') #{eggid}
+        div #{eggid}
       div.row
         div(class='eggAttr mr-3') egg Itemname is:
-        div(class='newAttr') #{eggItemname}
+        div #{egg_Itemname}
       div.row
         div(class='eggAttr mr-3') egg Quantity is:
-        div(class='newAttr') #{eggQuantity}
+        div #{egg_Quantity}
       div.row
         div(class='eggAttr mr-3') egg price is:
-        div(class='newAttr') #{eggprice}
+        div #{egg_price}
       
 
     button(class="btn btn-danger m-2" onclick="deleteOnid()") Delete
@@ -38,7 +38,7 @@ block content
     }
   script.
     function deleteOnid() {
-      console.log("Deleting the Resource")
+      console.log("starting delete")
       // delete first
       fetch(actionid, {
         method: 'DELETE'      // Don't need a body for the delete

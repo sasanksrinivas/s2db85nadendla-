@@ -4,12 +4,12 @@ block content
   h1= title
 
   if (toShow == null)
-    h2 No instance to delete
+    h2 No instance to view update
   else
     - let eggid = toShow._id
-    - let eggItemname = toShow.Itemname
-    - let eggQuantity = toShow.Quantity
-    - let eggprice = toShow.price
+    - let egg_Itemname = toShow.egg_Itemname
+    - let egg_Quantity = toShow.egg_Quantity
+    - let egg_price = toShow.egg_price
   
     div.row(class='mb-2')
       div.mr-1 ID is
@@ -17,15 +17,15 @@ block content
     - let actionid = "/resource/egg/" + eggid
     form(id='eggForm', action= actionid, method="PUT")
       div.form-group
-          label.eggAttr(for='type') egg Itemname
-          input#Itemname(type='text', name='type', value= Itemname )
-      div.form-group
-          label.eggAttr(for='price') egg Quantity
-          input#Quantity(type='number', name='price', value= Quantity )
-      div.form-group
-          label.eggAttr(for='flavor') egg price
-          input#price(type='text', name='flavor', value= price )
-      input(type="submit")
+          label.eggAttr(for='egg_Itemname') egg Itemname
+          input#egg_Itemname(type='text', name='egg_Itemname', value= egg_Itemname )
+          div.form-group
+          label.eggAttr(for='egg_Quantity') egg Quantity
+          input#egg_Quantity(type='text', name='egg_price', value= egg_Quantity)
+          div.form-group
+          label.eggAttr(for='egg_price') egg price
+          input#egg_price(type='number', name='egg_price', value= egg_price )
+          input(type="submit")
 
   script.
     document.forms['eggForm'].addEventListener('submit', (event) => {

@@ -1,15 +1,27 @@
-extends layout
-block content
-  h1= title
-  p Welcome to Yoga Narasimha#{title}
-  button(type="button", class="btn btn-danger",onclick="moreClaps()") Press  me
-  div(id = "target") Clap for me
-  script.
+//- extends layout
+//- block content
+//-   h1= title
+//-   p Welcome to sasank srinivas#{title}
+//-   button(type="button", class="btn btn-danger",onclick="moreClaps()") Press  me
+//-   div(id = "target") Clap for me
+//-   script.
 
-    var clap_count=0;
+//-     var clap_count=0;
     
-    function moreClaps() {
-      clap_count=clap_count+2;
-      document.getElementById("target").innerHTML=`Value now ${clap_count}`;
-    }
+//-     function moreClaps() {
+//-       clap_count=clap_count+2;
+//-       document.getElementById("target").innerHTML= 'Clap '+ clap_count +' times';
+//-       }
+//-       - var egg= ['egg_Itemname','egg_Quantity','egg_price']
+//-   a(href='/egg') Click here to search for egg
 
+block content 
+  if (!user) 
+    a(href="/login") Login 
+    br 
+    a(href="/register") Register 
+  if (user) 
+    p You are currently logged in as #{user.username} 
+    a(href="/egg") Take me to egg 
+    br 
+    a(href="/logout") Logout

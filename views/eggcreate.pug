@@ -5,14 +5,14 @@ block content
 
   form(id='eggForm', action="/resource/egg", method="POST")
     div.form-group
-        label.eggAttr(for='Itemname') egg Itemname
-        input#Itemname(type='text', name='Itemname')
+        label.eggAttr(for='egg_Itemname') egg Itemname
+        input#egg_Itemname(type='text', name='egg_Itemname')
     div.form-group
-        label.eggAttr(for='Quantity') egg Quantity
-        input#Quantity(type='number', name='Quantity')
+        label.eggAttr(for='egg_Quantity') egg Quantity
+        input#egg_Quantity(type='number', name='egg_Quantity')
     div.form-group
-        label.eggAttr(for='price') egg price
-        input#price(type='text', name='price')
+        label.eggAttr(for='egg_price') egg price
+        input#egg_price(type='number', name='egg_price')
     input(type="submit")
 
   script.

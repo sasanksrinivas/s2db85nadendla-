@@ -4,6 +4,6 @@ block content
     h1= title       
         - var image_names= ["Dusky woodcock.jpg","laughingthrush.jpg","Owlcation.jpg","Pacific monarch.jpg","Red-bellied pitta.jpg"]            
             -for(let i=0;i<3;i++){
-                - let randnum=Math.floor(Math.random()*5)
-                 img(src= `/images/${image_names[randnum]}` alt="image", height="300", width="300")
+                -var num = image_names[Math.floor(Math.random() * 5)]
+                 img(src= "/images/"+num, alt= num, style={width: "300",height: "300"})
             -}

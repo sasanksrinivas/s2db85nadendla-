@@ -1,27 +1,28 @@
 extends layout
 
 block content
-  h1(id="titlestyle")= title
+  h1= title
 
   if (toShow == null)
-    h2 No instance to delete
+    h2 No instance to details
   else
     - let eggid = toShow._id
-    - let Itemname = toShow.Itemname
-    - let Quantity = toShow.Quantity
-    - let price = toShow.price
+    - let egg_Itemname = toShow.egg_Itemname
+    - let egg_Quantity = toShow.egg_Quantity
+    - let egg_price = toShow.egg_price
 
     div
-      div.row
+        div.row
         div(class='eggAttr mr-3') egg ID is:
-        div(class='variety stylesheetnew') #{eggid}
-      div.row
+        div(class='values') #{eggid}
+        div.row
         div(class='eggAttr mr-3') egg Itemname is:
-        div(class="variety") #{Itemname}
-      div.row
+        div(class="values") #{egg_Itemname}
+        div.row
         div(class='eggAttr mr-3') egg Quantity is:
-        div(class="variety") #{Quantity}
-      div.row
+        div(class="values") #{egg_Quantity}
+        div.row
         div(class='eggAttr mr-3') egg price is:
-        div(class="variety") #{price}
+        div(class="values") #{egg_price}
+ 
     

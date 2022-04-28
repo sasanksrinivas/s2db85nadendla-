@@ -6,8 +6,19 @@ body {
 a {
   color: #00B7FF;
 }
-.eggAttr { 
-  background-color: orange; 
+
+.pizzaAttr { 
+  background-color: aquamarine; 
+  border: outset;
+  font-size: small;
   width: 120px; 
-} 
- 
+}
+
+.values{
+  border: outset;
+  width: 170px;
+  border-color: bisque;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: small;
+}
